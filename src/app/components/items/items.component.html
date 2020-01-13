@@ -1,0 +1,24 @@
+<div style="text-align:left;width:500px;">
+    <table *ngIf="items?.length > 0;else noItems">
+        <!-- ADD HEADERS -->
+        <tr>
+            <th>Trade ID</th>
+                <th>Trade Date</th>
+                    <th>Start Capital</th>
+                    <th>Ledger Capital</th>
+        </tr>
+  
+        <!-- BIND ARRAY TO TABLE -->
+        <tr *ngFor="let item of items">
+            <td>{{item.trade_id}}</td>
+                <td>{{item.trade_date}}</td>
+                    <td>{{item.start_cap}}</td>
+                    <td>{{item.ledger_cap}}</td>
+        </tr>
+    </table>
+    <ng-template #noItems>
+        <hr>
+        <h5>There are no items in the list</h5>
+    </ng-template>
+  </div>
+  
